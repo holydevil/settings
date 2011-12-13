@@ -1,0 +1,25 @@
+startup_message off
+
+# changed the escape key to single char "`"
+escape `` 
+
+# Automatically detach on hangup.
+autodetach on
+
+shelltitle "shell"
+
+#don't need this extra bar in single window mode(Split mode is `+S)
+caption splitonly "%{= kc}%?%-Lw%?%{= kY}%n*%f %t%?(%u)%?%{= kc}%?%+Lw%?"
+
+hardstatus off
+hardstatus alwayslastline "%{rk}%H %{gk}%c %{yk}%M%d %{wk}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{wk}%?%+Lw%?"
+
+# start with visual bell as default
+vbell on
+vbell_msg "bell on %t (%n)"
+
+# default scrollback value for new windows
+defscrollback 30000
+
+#assuming it will fix scrolling issue, it doesn't. Still using g h j k and others in copy mode(`+Esc) to scroll
+termcapinfo xterm-color|xterm|xterms|xs|rxvt ti@:te@
